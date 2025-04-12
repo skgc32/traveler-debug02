@@ -23,5 +23,6 @@
         <div><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white nav-link" %></div>
       </header>
     <% end %>
+    <%= yield %>
   </body>
 </html>
