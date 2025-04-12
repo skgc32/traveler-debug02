@@ -1,0 +1,115 @@
+// 新規投稿
+h1 {
+    font-family: serif;
+  }
+  
+  .cover-new {
+    height: 100%;
+    width: 100%;
+    background-image: url(/assets/new.jpg);
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: lighten;
+    background-size: 100% 100%;
+  }
+  
+  .form-label {
+    font-size: 20px;
+  }
+  
+  .form-group {
+    width: 600px;
+  }
+
+// 投稿一覧
+.cover-index {
+  height: 110%;
+  width: 100%;
+  background-image: url(/assets/index.jpg);
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  background-size: 100% 100%;
+}
+
+.one-post img:hover {
+  transform: scale(1.2,1.2);
+}
+
+.caption {
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.index-left {
+  margin-left: 2.5rem!important;
+}
+
+// 詳細ページ
+.cover-show {
+  height: 100%;
+  width: 100%;
+  background-image: url(/assets/show.jpg);
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  background-size: 100% 100%;
+}
+
+#text {
+  font-size: 18px;
+}
+
+// 編集ページ
+.cover-edit {
+  height: 100%;
+  width: 100%;
+  background-image: url(/assets/edit.jpg);
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  background-size: 100% 100%;
+}
+
+// ページネーション
+.page a,
+.next a,
+.last a,
+.first a,
+.prev a {
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.page a:hover,
+.next a:hover,
+.last a:hover,
+.first a:hover,
+.prev a:hover {
+  color: black;
+}
+
+.current {
+  font-weight: bold;
+}
+
+// コメント
+.comments-index {
+  background-color: #fff;
+  border: 1px #000 solid;
+}
+
+.comment-delete {
+  margin-left: auto;
+}
+
+.comments {
+  margin-left: 50px;
+}
+
+.caption {
+  margin-bottom: 0;
+}
+
+// いいねボタン
+.favorite_btn {
+  color: #000;
+}

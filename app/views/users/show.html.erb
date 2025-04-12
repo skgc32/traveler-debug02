@@ -1,0 +1,51 @@
+<div class="cover-user-show">
+  <div class="container d-flex flex-column align-items-center">
+    <div class="row mt-5">
+      <% if user_signed_in? && @user == current_user %>
+        <h1 class="font-weight-normal">マイページ</h1>
+      <% else %>
+        <h1 class="font-weight-normal"><%= @user.name %>さんのページ</h1>
+      <% end %>
+    </div>
+    <% if user_signed_in? && @user == current_user %>
+      <p class="d-flex align-self-end">
+        <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-success" %>
+      </p>
+    <% end %>
+    <% if current_user != @user %>
+      <% if current_user.following?(@user) %>
+        <p class="d-flex align-self-end">
+          <%= link_to 'フォロー外す', user_relationships_path(@user.id),  data: { turbo_method: :delete }, class: "btn btn-danger" %>
+        </p>
+        <% else %>
+        <p class="d-flex align-self-end">
+          <%= link_to 'フォローする', user_relationships_path(@user.id),  data: { turbo_method: :post }, class:"btn btn-success" %>
+        </p>
+      <% end %>
+    <% end %>
+    <div class="d-flex w-100">
+      <%= attachment_image_tag @user, :profile_image, size: '100x100', fallback: "no_image.svg", class: "mb-3 profile-img" %>
+      <h4 class="ml-3 mb-3 card w-100 profile"><%= @user.profile %></h4>
+    </div>
+    <div class="d-flex">
+      <%= link_to follows_user_path(@user) do %>
+        <h6>フォロー<%= @following_users.count %></h6>
+      <% end %>&nbsp;&nbsp;
+      <%= link_to followers_user_path(@user) do %>
+        <h6>フォロワー<%= @follower_users.count %></h6>
+      <% end %>
+    </div>
+    <div class="row mt-5 index-left w-100">
+      <% @posts.each do |post| %>
+        <div class="one-post col-sm-3 mb-3">
+          <%= link_to post_path(post) do %>
+            <%= attachment_image_tag post, :image, format: 'jpeg', size: '200x133' %>
+            <p class="caption mb-0"><%= post.location %></p>
+            <p class="caption"><%= "#{post.comments.count} コメント" %></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <%= paginate @posts %>
+  </div>
+</div>

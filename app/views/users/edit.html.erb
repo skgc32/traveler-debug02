@@ -1,0 +1,25 @@
+<div class="cover-user-edit">
+  <div class="container d-flex flex-column align-items-center">
+    <div class="row mt-5">
+      <h1 class="font-weight-normal">プロフィール編集</h1>
+    </div>
+    <div class="row mt-5">
+      <%= form_with model: @user, local:true do |f| %>
+      <div class="form-group">
+        <label class="form-label">名前</label>
+        <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前", class: "form-control" %>
+      </div>
+      <div class="form-group mt-3">
+        <label class="form-label">プロフィール画像</label><br>
+        <%= attachment_image_tag @user, :profile_image, size: '100x100', fallback: "no_image.svg", class: "mb-3 profile-img" %><br>
+        <%= f.file_field :profile_image %>
+      </div>
+      <div class="form-group mt-3">
+        <label class="form-label">プロフィール</label>
+        <%= f.text_field :profile, class: "form-control" %><br>
+      </div>
+      <%= f.submit '保存する', class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

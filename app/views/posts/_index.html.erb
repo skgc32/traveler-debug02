@@ -1,0 +1,19 @@
+<div class="row mt-3 mb-3 align-self-end">
+  <%= form_with method: :get, local: true do |f| %>
+  <%= f.text_field :search %>
+  <%= f.submit '検索する', name: nil %>
+  <% end %>
+</div>
+<div class="row mt-5 index-left w-100">
+  <% posts.each do |post| %>
+  <div class="one-post col-sm-4 mb-3">
+    <%= link_to post_path(post) do %>
+    <p class="caption"><%= post.user.name %></p>
+    <%= attachment_image_tag post, :image, format: 'jpeg', size: '300x200' %>
+    <p class="caption"><%= post.location %></p>
+    <p class="caption"><%= "#{post.comments.count} コメント" %></p>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+<%= paginate posts %>
