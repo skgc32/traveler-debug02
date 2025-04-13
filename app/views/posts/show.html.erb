@@ -4,30 +4,37 @@
       <h1 class="font-weight-normal">旅行投稿詳細</h1>
     </div>
     <% if @comment.errors.any? %>
-    <div class="card text-center card text-white bg-danger mt-3">
-      <%= @comment.errors.count %>件のエラーが発生しました
-      <% @comment.errors.full_messages.each do |message| %>
+     <div class="card text-center card text-white bg-danger mt-3">
+       <%= @comment.errors.count %>件のエラーが発生しました
+       <% @comment.errors.full_messages.each do |message| %>
        <%= message %>
-      <% end %>
-    </div>
+       <% end %>
+     </div>
     <% end %>
     <div class="d-flex mt-5">
       <div class="d-block">
+
         <p class="caption"><%= @post.user.name %></p>
-        <%= attachment_image_tag @post, :image, format: 'jpeg', size: "450x350" %><br>
-        <p class="caption"><%= @post.location %>
+          <%= attachment_image_tag @post, :image, format: 'jpeg', size: "450x350" %><br>
+
+        <p class="caption d-flex align-items-center">
+          <span class="mr-3"><%= @post.location %></span>
+
           <% if @post.favorited_by?(current_user) %>
-          <%= link_to post_favorites_path(@post),  data: { turbo_method: :delete }, class: "favorite_btn" do %>
-          ♥<%= @post.favorites.count %> いいね
-          <% end %>
+            <%= link_to post_favorites_path(@post),  data: { turbo_method: :delete }, class: "favorite_btn mr-3" do %>
+              ♥<%= @post.favorites.count %> いいね
+            <% end %>
           <% else %>
-          <%= link_to post_favorites_path(@post),  data: { turbo_method: :post }, class: "favorite_btn" do %>
-            ♡<%= @post.favorites.count %> いいね
+            <%= link_to post_favorites_path(@post),  data: { turbo_method: :post }, class: "favorite_btn mr-3" do %>
+              ♡<%= @post.favorites.count %> いいね
+            <% end %>
           <% end %>
-          <% end %>
+
+          <span class="view-count">閲覧数：<%= @post.views_count %>回</span>
         </p>
+
         <h2>感想</h2>
-        <p id="text"><%= @post.text %></p>
+        <p id="text"><%= @post.text %></p>     
         <% if @post.user == current_user %>
           <%= link_to '編集する', edit_post_path(@post.id), class: "btn btn-info mr-3" %>
           <%= link_to '削除する', post_path(@post.id),  data: { turbo_method: :delete, turbo_confirm:  "本当に消しますか？"}, class: "btn btn-danger" %><br>
