@@ -12,6 +12,10 @@ class User < ApplicationRecord
   has_many :following_user, through: :follower, source: :followed
   has_many :follower_user, through: :followed, source: :follower
 
+  has_many :conversations_as_sender, class_name: 'Conversation', foreign_key: 'sender_id'
+  has_many :conversations_as_recipient, class_name: 'Conversation', foreign_key: 'recipient_id'
+  has_many :messages
+  
   attachment :profile_image
 
   validates :name, presence: true
