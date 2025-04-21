@@ -1,0 +1,11 @@
+<% @conversations.each do |conversation| %>
+    <div>
+      <p>
+        会話相手: 
+        <% other_user = conversation.sender == current_user ? conversation.recipient : conversation.sender %>
+        <%= other_user.name %>
+      </p>
+      <%= link_to '会話を開く', conversation_path(conversation) %>
+    </div>
+  <% end %>
+  

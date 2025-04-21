@@ -1,0 +1,34 @@
+<h2>チャットルーム</h2>
+
+<div id="chat-messages">
+  <% @messages.each do |message| %>
+    <div class="message <%= 'sent' if message.user == current_user %>">
+      <div class="message-header">
+        <strong><%= message.user.name %></strong>
+        <span><%= message.created_at.strftime('%H:%M') %></span>
+      </div>
+      <div class="message-body">
+        <%= message.body %>
+      </div>
+      <div class="message-status">
+        <% if message.read %>
+          <span class="read-status">既読</span>
+        <% else %>
+          <span class="unread-status">未読</span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= form_with(model: [@conversation, @message], local: true) do |f| %>
+  <div class="message-form">
+    <%= f.text_area :body, placeholder: "140字以内で入力してください", maxlength: 140 %>
+    <%= f.submit '送信', class: 'send-button' %>
+  </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <p style="color: red;"><%= flash[:alert] %></p>
+<% end %>
+
