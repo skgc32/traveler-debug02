@@ -1,9 +1,11 @@
 #chat-messages {
-    max-width: 600px;
+    
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f0f8ff;
     border-radius: 10px;
+    overflow: hidden;
   }
   
   .message {
@@ -12,10 +14,15 @@
     background-color: #fff;
     border-left: 5px solid #00bcd4;
     border-radius: 8px;
+    float: left;
+    clear: both;
   }
   
   .message.sent {
-    border-left-color: #4caf50;
+    border-left-color: #ff4d4d;
+    background-color: #fff;
+    float: right;
+    clear: both;
   }
   
   .message-header {
@@ -24,7 +31,7 @@
   }
   
   .message-body {
-    font-size: 16px;
+    font-size: 17px;
     margin-top: 5px;
   }
   
@@ -41,14 +48,29 @@
   }
   
   .message-form {
-    margin-top: 20px;
+    margin: 20px auto 0;
     display: flex;
     gap: 10px;
+    justify-content: center; /* 子要素を中央に */
+    max-width: 900px;        /* フォーム全体の最大幅 */
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .message-form textarea {
-    flex: 1;
+    flex-grow: 1;           /* 空いてるスペースを使う */
+    max-width: 900px;       /* テキストエリアの最大幅 */
+    min-width: 300px;       /* 最小幅も決めておく */
     padding: 10px;
+    font-size: 17px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: none;
+  }
+  
+  .message-form textarea:focus {
+    outline: none;
+    border-color: #2196f3;
   }
   
   .send-button {
@@ -57,5 +79,11 @@
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .send-button:hover {
+    background-color: #1976d2;
   }
   
