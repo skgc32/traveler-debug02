@@ -1,66 +1,88 @@
 #chat-messages {
-    
-    max-width: 900px;
+    max-width: 1250px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f0f8ff;
     border-radius: 10px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: sans-serif;
+    max-height: 70vh;    /* 高さの上限を画面の70%に */
+    overflow-y: auto;    /* 縦スクロールを有効に */
+    padding-right: 10px; /* スクロールバーのスペース確保 */
   }
   
+  /* メッセージの基本枠 */
   .message {
+    position: relative;
     padding: 10px;
-    margin-bottom: 10px;
     background-color: #fff;
-    border-left: 5px solid #00bcd4;
+    border-left: 5px solid #00bcd4; /* 受信は青ライン */
     border-radius: 8px;
-    float: left;
+    max-width: 60%;
+    word-wrap: break-word;
     clear: both;
+    margin-bottom: 10px;
+    align-self: flex-start; /* 左寄せ */
   }
   
+  /* 送信メッセージは赤ラインで右寄せ */
   .message.sent {
     border-left-color: #ff4d4d;
-    background-color: #fff;
-    float: right;
-    clear: both;
+    align-self: flex-end; /* 右寄せ */
   }
   
+  /* メッセージ内のヘッダー（名前など） */
   .message-header {
     font-size: 16px;
     color: #555;
   }
   
+  /* メッセージ本文 */
   .message-body {
     font-size: 17px;
     margin-top: 5px;
   }
   
-  .message-status span {
-    font-size: 16px;
+  /* 既読・未読表示は枠の右外 */
+  .message-status {
+    position: absolute;
+    top: 50%;
+    right: -60px; /* メッセージ枠の右外 */
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
   }
   
+  /* 既読は緑 */
   .read-status {
     color: green;
   }
   
+  /* 未読は赤 */
   .unread-status {
     color: red;
   }
   
+  /* メッセージ入力フォームの親 */
   .message-form {
     margin: 20px auto 0;
     display: flex;
     gap: 10px;
-    justify-content: center; /* 子要素を中央に */
-    max-width: 900px;        /* フォーム全体の最大幅 */
+    justify-content: center;
+    max-width: 900px;
     width: 100%;
     box-sizing: border-box;
   }
   
+  /* テキストエリア */
   .message-form textarea {
-    flex-grow: 1;           /* 空いてるスペースを使う */
-    max-width: 900px;       /* テキストエリアの最大幅 */
-    min-width: 300px;       /* 最小幅も決めておく */
+    flex-grow: 1;
+    max-width: 900px;
+    min-width: 300px;
     padding: 10px;
     font-size: 17px;
     border-radius: 6px;
@@ -68,11 +90,13 @@
     resize: none;
   }
   
+  /* フォーカス時の枠線色変更 */
   .message-form textarea:focus {
     outline: none;
     border-color: #2196f3;
   }
   
+  /* 送信ボタン */
   .send-button {
     background-color: #2196f3;
     color: white;
@@ -83,7 +107,20 @@
     cursor: pointer;
   }
   
+  /* ホバー時 */
   .send-button:hover {
     background-color: #1976d2;
+  }
+  
+  /* 背景画像 */
+  body {
+    background-image: url(/assets/mypage.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
   }
   
