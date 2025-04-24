@@ -2,7 +2,7 @@
     max-width: 1250px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f0f8ff;
+    background-color: #ffffff;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -18,10 +18,10 @@
   .message {
     position: relative;
     padding: 10px;
-    background-color: #fff;
-    border-left: 5px solid #00bcd4; /* 受信は青ライン */
+    background-color: #e0f7fa;
     border-radius: 8px;
     max-width: 60%;
+    padding: 5px 10px;
     word-wrap: break-word;
     clear: both;
     margin-bottom: 10px;
@@ -30,7 +30,7 @@
   
   /* 送信メッセージは赤ラインで右寄せ */
   .message.sent {
-    border-left-color: #ff4d4d;
+    background-color: #ffecec;
     align-self: flex-end; /* 右寄せ */
   }
   
@@ -122,5 +122,19 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+  }
+  
+  .chat-title {
+    text-align: center;
+    font-size: 34px;
+    margin: 20px auto;
+    font-weight: bold;
+    color: #333;
+    margin-top: 45px;
+  }
+
+  .partner-name {
+    color: #007bff;  /* 好きな色に変更してください */
+    font-weight: bold;  /* 太字にするなら */
   }
   

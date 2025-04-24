@@ -1,4 +1,7 @@
-<h2>チャットルーム</h2>
+<h2 class="chat-title">
+  <span class="partner-name"><%= @partner.name %>さん</span>とのトークルーム
+</h2>
+
 
 <div id="chat-messages">
   <% @messages.each do |message| %>

@@ -6,6 +6,7 @@ class ConversationsController < ApplicationController
       def show
         @conversation = Conversation.find(params[:id])
         @messages = @conversation.messages.order(:created_at)
+        @partner = @conversation.other_user(current_user)
         @message = Message.new
         @messages.where.not(user_id: current_user.id).where(read: false).update_all(read: true)
       end
