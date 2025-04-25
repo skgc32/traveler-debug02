@@ -26,7 +26,7 @@
 
 <%= form_with(model: [@conversation, @message], local: true) do |f| %>
   <div class="message-form">
-    <%= f.text_area :body, placeholder: "140字以内で入力してください", maxlength: 140 %>
+    <%= f.text_area :body, placeholder: "140字以内で入力してください", maxlength: 140, rows: 1 %>
     <%= f.submit '送信', class: 'send-button' %>
   </div>
 <% end %>

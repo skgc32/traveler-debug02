@@ -88,6 +88,9 @@
     border-radius: 6px;
     border: 1px solid #ccc;
     resize: none;
+    height: 40px;
+    line-height: 1.5;
+    overflow-y: hidden;
   }
   
   /* フォーカス時の枠線色変更 */
