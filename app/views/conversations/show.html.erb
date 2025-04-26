@@ -8,7 +8,6 @@
     <div class="message <%= 'sent' if message.user == current_user %>">
       <div class="message-header">
         <strong><%= message.user.name %></strong>
-        <span><%= message.created_at.strftime('%H:%M') %></span>
       </div>
       <div class="message-body">
         <%= message.body %>
@@ -19,6 +18,8 @@
         <% else %>
           <span class="unread-status">未読</span>
         <% end %>
+        <br>
+          <span class="message-time"><%= message.created_at.strftime('%H:%M') %></span>
       </div>
     </div>
   <% end %>

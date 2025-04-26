@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   end
   
   mount ActionCable.server => '/cable'
+  mount Refile.app, at: "/attachments"
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   

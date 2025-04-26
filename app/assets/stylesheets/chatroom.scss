@@ -57,6 +57,17 @@
     white-space: nowrap;
   }
   
+  /* 相手メッセージ（左寄せ）: 右外に配置 */
+.message:not(.sent) .message-status {
+  right: -40px; /* メッセージ枠の右外 */
+}
+
+/* 自分メッセージ（右寄せ）: 左外に配置 */
+.message.sent .message-status {
+  left: -40px;  /* メッセージ枠の左外 */
+  right: auto;  /* rightを無効化 */
+}
+
   /* 既読は緑 */
   .read-status {
     color: green;
