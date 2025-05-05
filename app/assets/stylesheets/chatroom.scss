@@ -18,7 +18,7 @@
   .message {
     position: relative;
     padding: 10px;
-    background-color: #e0f7fa;
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
     border-radius: 8px;
     max-width: 60%;
     padding: 5px 10px;
@@ -29,9 +29,9 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 
-  /* 送信メッセージは赤ラインで右寄せ */
+  /* 送信メッセージ右寄せ */
   .message.sent {
-    background-color: #ffecec;
+    background: linear-gradient(135deg, #ffecec, #fbd2d2); /* ピンクから薄いピンクにグラデーション */
     align-self: flex-end; /* 右寄せ */
   }
 
@@ -151,6 +151,6 @@
   .partner-name {
     color: #FFC0CB;  /* 好きな色に変更してください */
     font-weight: bold;  /* 太字にするなら */
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   }
   
