@@ -17,13 +17,13 @@ Rails.application.routes.draw do
   end
 
   resources :conversations, only: [:index, :show, :create] do
-    resources :messages, only: [:create] do
+    resources :messages, only: [:create, :destroy] do
       member do
         patch :mark_as_read
       end
     end
   end
-  
+
   mount ActionCable.server => '/cable'
   mount Refile.app, at: "/attachments"
   

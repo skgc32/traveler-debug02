@@ -22,6 +22,16 @@ class MessagesController < ApplicationController
           head :ok
         end
       
+        def destroy
+          if @message.user_id == current_user.id
+            @message.destroy
+            flash[:notice] = "メッセージを削除しました"
+          else
+            flash[:alert] = "自分のメッセージだけ削除できます"
+          end
+          redirect_to conversation_path(@conversation)
+        end
+        
         private
       
         def message_params

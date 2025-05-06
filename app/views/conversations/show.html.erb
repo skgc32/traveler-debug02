@@ -12,6 +12,14 @@
       <div class="message-body">
         <%= message.body %>
       </div>
+
+      <% if message.user == current_user %>
+        <%= link_to "削除", conversation_message_path(@conversation, message), 
+            method: :delete, 
+            data: { confirm: "このメッセージを削除してもいいですか？" },
+            class: "delete-button" %>
+      <% end %>
+
       <div class="message-status">
         <% if message.read %>
           <span class="read-status">既読</span>
