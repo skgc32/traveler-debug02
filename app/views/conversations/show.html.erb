@@ -14,7 +14,7 @@
       </div>
 
       <% if message.user == current_user %>
-        <%= link_to "削除", conversation_message_path(@conversation, message), 
+        <%= link_to "🗑️", conversation_message_path(@conversation, message), 
             method: :delete, 
             data: { confirm: "このメッセージを削除してもいいですか？" },
             class: "delete-button" %>
