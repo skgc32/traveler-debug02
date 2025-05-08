@@ -27,7 +27,7 @@
           <span class="unread-status">未読</span>
         <% end %>
         <br>
-          <span class="message-time"><%= message.created_at.strftime('%H:%M') %></span>
+          <span class="message-time"><%= message.created_at.in_time_zone('Asia/Tokyo').strftime('%H:%M') %></span>
       </div>
     </div>
   <% end %>
