@@ -119,7 +119,9 @@
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* メタリック感を出すための影 */
     cursor: pointer;
+    
   }
   
   /* ホバー時 */
