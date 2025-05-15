@@ -152,9 +152,7 @@
   }
 
   .partner-name {
-    background: linear-gradient(90deg, #FFD700, #FF8C00, #FF1493, #8A2BE2); /* 金→オレンジ→ピンク→紫 */
-    -webkit-background-clip: text;
-    color: transparent;
+    color: #FF1493;
     font-weight: bold;  /* 太字にするなら */
     letter-spacing: 2px; /* 文字の間隔を広げる */
     text-shadow: 0 4px 8px rgba(0, 0, 0, 1);

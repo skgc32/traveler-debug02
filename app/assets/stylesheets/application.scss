@@ -34,6 +34,8 @@
 header {
   display: flex;
   background-color: black;
+  position: fixed;
+  width: 100%; 
 }
 
 header div:first-child {

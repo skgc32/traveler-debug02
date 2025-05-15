@@ -1,7 +1,7 @@
 <div class="cover-edit">
   <div class="container">
     <div class="row">
-      <h1 class="font-weight-normal mt-5 mb-5">旅行投稿編集</h1>
+      <h1 class="font-weight-normal mt-5 mb-5">映画投稿編集</h1>
     </div>
     <% if @post.errors.any? %>
     <div class="card text-center card text-white bg-danger mb-3">
@@ -14,7 +14,7 @@
     <div class="row">
       <%= form_with model: @post, local:true do |f| %>
       <div class="form-group mb-3">
-        <label class="form-label">旅行先</label>
+        <label class="form-label">タイトル</label>
         <%= f.text_field :location, class: "form-control" %>
       </div>
       <div class="form-group mb-3">
