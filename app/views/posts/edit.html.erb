@@ -29,7 +29,7 @@
         <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"),k]}, {}, {class: "custom-select w-25 mb-3"} %>
       </div>
       <%= f.submit '保存する', class: "btn btn-success" %><br>
-      <%= link_to '投稿詳細ページへ', post_path(@post), class: "btn btn-dark mt-3" %>
+      <%= link_to 'レビュー詳細ページへ', post_path(@post), class: "btn btn-dark mt-3" %>
       <% end %>
     </div>
   </div>
