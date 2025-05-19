@@ -16,9 +16,9 @@
         <div><%= link_to root_path, class: "text-white nav-link" do %>traveler<% end %></div>
         <div><%= link_to "トップ", root_path, class: "text-white nav-link" %></div>
         <div><%= link_to "レビュー", new_post_path, class: "text-white nav-link" %></div>
-        <div><%= link_to "ユーザレビュー", posts_path, class: "text-white nav-link" %></div>
+        <div><%= link_to "ユーザーレビュー", posts_path, class: "text-white nav-link" %></div>
         <div><%= link_to "ウォッチャリスト", confirm_posts_path, class: "text-white nav-link" %></div>
-        <div><%= link_to "ユーザ一覧", users_path, class: "text-white nav-link" %></div>
+        <div><%= link_to "ユーザー一覧", users_path, class: "text-white nav-link" %></div>
         <div><%= link_to "マイレビュー", user_path(current_user.id), class: "text-white nav-link" %></div>
         <div><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white nav-link" %></div>
       </header>
