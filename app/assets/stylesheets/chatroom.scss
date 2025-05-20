@@ -154,6 +154,7 @@
   .partner-name {
     color: #FF5733;
     font-weight: bold;  /* 太字にするなら */
+    border-bottom: dashed 2px #6594e0;
     letter-spacing: 3px; /* 文字の間隔を広げる */
     text-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   }
