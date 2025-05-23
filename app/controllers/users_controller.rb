@@ -8,8 +8,9 @@ class UsersController < ApplicationController
     @posts = @user.posts.page(params[:page]).per(8).reverse_order
     @following_users = @user.following_user
     @follower_users = @user.follower_user
-    @reviews = @user.reviews.order(created_at: :desc)
-    @reviews_per_year = @user.reviews.group_by_year(:created_at, format: "%Y").count
+    @review_count = @user.posts.count
+    @reviews_per_year = @user.posts.group_by_year(:created_at, format: "%Y").count
+
   end
 
   def edit

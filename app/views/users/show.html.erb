@@ -2,8 +2,19 @@
   <div class="container d-flex flex-column align-items-center">
     <div class="row mt-5">
       <% if user_signed_in? && @user == current_user %>
-        <h1 class="font-weight-normal">マイレビュー</h1>
-        <p>レビュー件数: <%= @user.reviews.count %> 件</p> 
+        <h1 class="font-weight-normal text-center">マイレビュー</h1>
+
+        <div style="display: flex; justify-content: center; align-items: center; gap: 20px; font-size: 18px;">
+          <p>レビュー件数: <%= @review_count %> 件</p>
+          <div>
+            <ul style="display: flex; list-style: none; padding: 0; gap: 10px;">
+              <% @reviews_per_year.each do |year, count| %>
+               <li><%= year %>年: <%= count %>件</li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
       <% else %>
         <h1 class="font-weight-normal"><%= @user.name %>さんのページ</h1>
       <% end %>
