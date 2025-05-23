@@ -3,6 +3,7 @@
     <div class="row mt-5">
       <% if user_signed_in? && @user == current_user %>
         <h1 class="font-weight-normal">マイレビュー</h1>
+        <p>レビュー件数: <%= @user.reviews.count %> 件</p> 
       <% else %>
         <h1 class="font-weight-normal"><%= @user.name %>さんのページ</h1>
       <% end %>

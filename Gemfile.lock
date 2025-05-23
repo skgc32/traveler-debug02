@@ -136,6 +136,8 @@ GEM
     ffi (1.17.1-x64-mingw-ucrt)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    groupdate (6.5.1)
+      activesupport (>= 7)
     http-accept (1.7.0)
     http-cookie (1.0.8)
       domain_name (~> 0.5)
@@ -348,6 +350,7 @@ DEPENDENCIES
   devise-i18n
   enum_help
   error_highlight (>= 0.4.0)
+  groupdate
   importmap-rails
   jbuilder
   jquery-rails

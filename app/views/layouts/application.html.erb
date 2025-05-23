@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MoviEscort</title>
+    <title>MovieChoose</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,7 +15,7 @@
       <header>
         <div><%= link_to root_path, class: "text-white nav-link" do %>traveler<% end %></div>
         <div><%= link_to "トップ", root_path, class: "text-white nav-link" %></div>
-        <div><%= link_to "レビュー", new_post_path, class: "text-white nav-link" %></div>
+        <div><%= link_to "レビューする", new_post_path, class: "text-white nav-link" %></div>
         <div><%= link_to "ユーザーレビュー", posts_path, class: "text-white nav-link" %></div>
         <div><%= link_to "ウォッチャリスト", confirm_posts_path, class: "text-white nav-link" %></div>
         <div><%= link_to "ユーザー一覧", users_path, class: "text-white nav-link" %></div>
@@ -24,6 +24,6 @@
       </header>
     <% end %>
     <%= yield %>
-    <footer>© 2025 MoviEscort</footer>
+    <footer>© 2025 MovieChoose</footer>
   </body>
 </html>
