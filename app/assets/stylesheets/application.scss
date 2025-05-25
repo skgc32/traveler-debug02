@@ -38,6 +38,13 @@ header {
   width: 100%; 
 }
 
+footer {
+  position: fixed;
+  bottom: 0; 
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
 header div:first-child {
   margin-right: auto;
   font-size: 25px;
