@@ -100,7 +100,7 @@
     border-radius: 6px;
     border: 1px solid #ccc;
     resize: none;
-    height: 40px;
+    height: 80px;
     line-height: 1.5;
     overflow-y: hidden;
   }
@@ -113,21 +113,22 @@
   
   /* 送信ボタン */
   .send-button {
-    background: linear-gradient(145deg, #d8d8d8, #c0c0c0, #d8d8d8); /* 明るい銀色中心 */
-    color: #222; /* 文字も少し黒寄りにしてコントラストを強める */
-    border: 1px solid #bbb;
+    background: linear-gradient(145deg, #ff90b3, #ffaad4); /* 明るくてポップなピンク系グラデーション */
+    color: white;
+    border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 15px;
     font-weight: bold;
-    box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 #ccc, 0 2px 5px rgba(0, 0, 0, 0.3);
-    text-shadow: 0 1px 0 #fff;
+    box-shadow: 0 6px 12px rgba(255, 144, 179, 0.4);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
   
   /* ホバー時 */
   .send-button:hover {
-    background: linear-gradient(145deg, #c8c8c8, #b0b0b0, #c8c8c8);
+    transform: scale(1.05); /* ちょっと大きく */
+    box-shadow: 0 8px 16px rgba(255, 144, 179, 0.6);
   }
   
   /* 背景画像 */
@@ -140,6 +141,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    overflow: hidden; /* ページ全体のスクロールを無効化 */
   }
   
   .chat-title {
@@ -148,11 +150,11 @@
     margin: 20px auto;
     font-weight: bold;
     color: #333;
-    margin-top: 45px;
+    margin-top: 60px;
   }
 
   .partner-name {
-    color: #FF5733;
+    color: #b0f2b6;
     font-weight: bold;  /* 太字にするなら */
     border-bottom: dashed 2px #6594e0;
     letter-spacing: 3px; /* 文字の間隔を広げる */
